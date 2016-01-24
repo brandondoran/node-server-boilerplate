@@ -1,8 +1,12 @@
 {
-  "name": "node-babel-express",
+  "name": "node-server-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for Node Express App using Babel",
   "main": "index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/brandondoran/node-server-boilerplate.git"
+  },
   "scripts": {
     "lint": "./node_modules/.bin/eslint . --ext .js || true",
     "pretest": "npm run lint",
