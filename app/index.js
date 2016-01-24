@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import compression from 'compression';
+import routes from './routes';
+// const routes = require('./routes');
 
 function createApp(config) {
   const app = express();
@@ -12,6 +14,8 @@ function createApp(config) {
   if (config.get('compression')) {
     app.use(compression());
   }
+
+  app.use('/', routes);
 
   return app;
 }
