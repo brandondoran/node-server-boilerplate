@@ -4,14 +4,16 @@
   "description": "Boilerplate for Node Express App using Babel",
   "main": "index.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/brandondoran/node-server-boilerplate.git"
+    "type": "git",
+    "url": "https://github.com/brandondoran/node-server-boilerplate.git"
   },
   "scripts": {
-    "lint": "./node_modules/.bin/eslint . --ext .js || true",
-    "pretest": "npm run lint",
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "pretest": "npm run -s lint",
     "test": "env NODE_ENV=test ./node_modules/.bin/mocha --recursive --reporter spec --require babel-register",
-    "start": "node server"
+    "start": "node server",
+    "precommit": "npm run -s lint",
+    "prepush": "npm -s test"
   },
   "keywords": [
     "node",
@@ -26,6 +28,7 @@
   "devDependencies": {
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
+    "husky": "^0.10.2",
     "mocha": "^2.3.4",
     "supertest": "^1.1.0"
   },
