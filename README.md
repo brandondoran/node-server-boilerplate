@@ -1,5 +1,8 @@
 # node-server-boilerplate
 
+[![Dependency Status](https://david-dm.org/brandondoran/node-server-boilerplate.svg)](https://david-dm.org/brandondoran/node-server-boilerplate)
+[![devDependency Status](https://david-dm.org/brandondoran/node-server-boilerplate/dev-status.svg)](https://david-dm.org/brandondoran/node-server-boilerplate#info=devDependencies)
+
 An simple, opinionated boilerplate for Node web apps
 
 - [Babel](http://babeljs.io/) require hook, es2015 and stage-0 presets
