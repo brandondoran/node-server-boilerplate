@@ -30,6 +30,7 @@
     "babel-register": "^6.4.3",
     "body-parser": "^1.14.2",
     "compression": "^1.6.1",
+    "convict": "^1.0.2",
     "express": "^4.13.4"
   }
 }

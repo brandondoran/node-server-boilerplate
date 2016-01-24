@@ -2,14 +2,16 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 
-function createApp() {
+function createApp(config) {
   const app = express();
 
   // parse application/json
   app.use(bodyParser.json());
 
   // Gzip
-  app.use(compression());
+  if (config.get('compression')) {
+    app.use(compression());
+  }
 
   return app;
 }
