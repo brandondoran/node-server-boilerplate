@@ -1,8 +1,8 @@
 import convict from 'convict';
-import environments from './environments';
+import bulk from 'bulk-require';
 
-// Default  configuration - environment specific configs are in ./environments
-// Note: env will overide default value
+// Default configuration - environment specific configs are in ./environments
+// Note: process.env will overide default value
 const config = convict({
   env: {
     doc: 'The applicaton environment.',
@@ -25,10 +25,11 @@ const config = convict({
   }
 });
 
-// load environment dependent configuration
+// Load all js files from ./environments and use config for current environment
+const environments = bulk(`${__dirname}/environments`, ['*.js']);
 const env = environments[config.get('env')];
 if (env) {
-  config.load(env);
+  config.load(env.default);
 }
 
 // perform validation
